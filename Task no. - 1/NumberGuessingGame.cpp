@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int target = (rand() % 100) + 1;
+    int target = (rand() % 10) + 1;
     int guess;
 
     cout << "Welcome to the Number Guessing Game!" << endl;
