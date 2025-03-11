@@ -1,9 +1,11 @@
-#include <cstdlib>
+#include <bits/stdc++.h>
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    int target = (rand() % 10) + 1;
+    srand(time(0));
+    int target = (rand() % 100) + 1;
     int guess;
 
     cout << "Welcome to the Number Guessing Game!" << endl;
@@ -15,9 +17,9 @@ int main() {
         cin >> guess;
 
         if (guess > target) {
-            cout << "Too high! Try again." << endl;
+            cout << "Its high! Try again." << endl;
         } else if (guess < target) {
-            cout << "Too low! Try again." << endl;
+            cout << "Its low! Try again." << endl;
         } else {
             cout << "Congratulations! You guessed the correct number." << endl;
         }
