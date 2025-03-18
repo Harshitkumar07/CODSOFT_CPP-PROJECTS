@@ -15,7 +15,7 @@ This project is a console-based calculator developed using **C++**. It performs 
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/CODSOFT.git
+   git clone https://github.com/Harshitkumar07/CODSOFT_CPP-PROJECTS/tree/main/Task%20No.%20-%202.git
    ```
 2. Navigate to the **SimpleCalculator** folder.
 3. Compile the program:
