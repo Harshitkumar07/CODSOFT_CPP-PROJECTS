@@ -34,7 +34,7 @@ Key features include:
 ## How to Run
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/CODSOFT.git
+   git clone https://github.com/Harshitkumar07/CODSOFT_CPP-PROJECTS.git
    ```
 2. Navigate to the respective project folder.
 3. Compile the code using a C++ compiler, e.g.:
