@@ -16,9 +16,9 @@ int main() {
         cin >> guess;
 
         if (guess > target) {
-            cout << "Its high! Try again." << endl;
+            cout << "Too high! Try again." << endl;
         } else if (guess < target) {
-            cout << "Its low! Try again." << endl;
+            cout << "Too low! Try again." << endl;
         } else {
             cout << "Congratulations! You guessed the correct number." << endl;
         }
