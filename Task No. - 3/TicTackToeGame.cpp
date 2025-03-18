@@ -1,42 +1,43 @@
 #include <iostream>
-
 using namespace std;
 
 char board[3][3];
-char currPlayer;
+char currentPlayer;
+
 void resetBoard() {
-    char start = '1';
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            board[i][j] = start++;
+    char cellNumber = '1';
+    for (int row = 0; row < 3; row++) {
+        for (int col = 0; col < 3; col++) {
+            board[row][col] = cellNumber++;
         }
     }
-    currPlayer = 'X';
+    currentPlayer = 'X';
 }
 
 void displayBoard() {
     cout << "\nTIC-TAC-TOE BOARD\n";
-    for (int i = 0; i < 3; i++) {
-        cout << " " << board[i][0] << " | " << board[i][1] << " | " << board[i][2] << " \n";
-        if (i < 2) cout << "---|---|---\n";
+    for (int row = 0; row < 3; row++) {
+        cout << " " << board[row][0] << " | " << board[row][1] << " | "
+             << board[row][2] << " \n";
+        if (row < 2) cout << "---|---|---\n";
     }
     cout << endl;
 }
 
 bool isValidMove(char move) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (board[i][j] == move) return true;
+    for (int row = 0; row < 3; row++) {
+        for (int col = 0; col < 3; col++) {
+            if (board[row][col] == move) return true;
         }
     }
     return false;
 }
 
 void makeMove(char move) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (board[i][j] == move) {
-                board[i][j] = currPlayer;
+    for (int row = 0; row < 3; row++) {
+        for (int col = 0; col < 3; col++) {
+            if (board[row][col] == move) {
+                board[row][col] = currentPlayer;
                 return;
             }
         }
@@ -45,22 +46,24 @@ void makeMove(char move) {
 
 bool checkWin() {
     for (int i = 0; i < 3; i++) {
-        if ((board[i][0] == board[i][1] && board[i][1] == board[i][2]) || 
+        if ((board[i][0] == board[i][1] && board[i][1] == board[i][2]) ||
             (board[0][i] == board[1][i] && board[1][i] == board[2][i])) {
             return true;
         }
     }
-    if ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) || 
+
+    if ((board[0][0] == board[1][1] && board[1][1] == board[2][2]) ||
         (board[0][2] == board[1][1] && board[1][1] == board[2][0])) {
         return true;
     }
+
     return false;
 }
 
 bool checkDraw() {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (board[i][j] >= '1' && board[i][j] <= '9') {
+    for (int row = 0; row < 3; row++) {
+        for (int col = 0; col < 3; col++) {
+            if (board[row][col] >= '1' && board[row][col] <= '9') {
                 return false;
             }
         }
@@ -69,7 +72,7 @@ bool checkDraw() {
 }
 
 void switchPlayer() {
-    currPlayer = (currPlayer == 'X') ? 'O' : 'X';
+    currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
 }
 
 int main() {
@@ -82,8 +85,7 @@ int main() {
 
         while (!gameOver) {
             displayBoard();
-
-            cout << "Player " << currPlayer << ", enter your move (1-9): ";
+            cout << "Player " << currentPlayer << ", enter your move (1-9): ";
             cin >> move;
 
             if (!isValidMove(move)) {
@@ -92,13 +94,14 @@ int main() {
             }
 
             makeMove(move);
+
             if (checkWin()) {
                 displayBoard();
-                cout << "Player " << currPlayer << " wins! \n";
+                cout << "Player " << currentPlayer << " wins!\n";
                 gameOver = true;
             } else if (checkDraw()) {
                 displayBoard();
-                cout << "It's a draw! \n";
+                cout << "It's a draw!\n";
                 gameOver = true;
             } else {
                 switchPlayer();
@@ -110,7 +113,7 @@ int main() {
 
     } while (playAgain == 'y' || playAgain == 'Y');
 
-    cout << "Thanks for playing! Goodbye! \n";
+    cout << "Thanks for playing!\n";
 
     return 0;
 }
