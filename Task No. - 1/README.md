@@ -15,7 +15,7 @@ This project is a console-based number guessing game created using **C++**. The 
 ## How to Run
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Harshitkumar07/CODSOFT_CPP-PROJECTS/Task No.-1.git
+   git clone https://github.com/Harshitkumar07/CODSOFT_CPP-PROJECTS/tree/main/Task%20No.%20-%201.git
    ```
 2. Navigate to the **NumberGuessingGame** folder.
 3. Compile the program:
