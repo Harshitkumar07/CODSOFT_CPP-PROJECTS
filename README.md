@@ -7,7 +7,6 @@ Welcome to the **C++ Projects** repository! This repository contains a collectio
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Projects
 
